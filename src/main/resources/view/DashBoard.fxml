@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="752.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
+   <children>
+      <AnchorPane fx:id="mainpane" layoutY="-1.0" prefHeight="759.0" prefWidth="207.0" style="-fx-background-color: gray;">
+         <children>
+            <Label layoutX="37.0" layoutY="26.0" prefHeight="32.0" prefWidth="141.0" text="DASHBOARD" textFill="#eeeaea">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Button layoutX="33.0" layoutY="103.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="SUPPLIER" />
+            <Button layoutX="33.0" layoutY="144.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="181.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="221.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="295.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="332.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="367.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button layoutX="33.0" layoutY="402.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button fx:id="btnuser" layoutX="33.0" layoutY="441.0" mnemonicParsing="false" onAction="#user_OnAction" prefHeight="26.0" prefWidth="141.0" text="USER" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="subpain" layoutX="207.0" layoutY="-1.0" prefHeight="758.0" prefWidth="943.0" />
+   </children>
+</AnchorPane>
