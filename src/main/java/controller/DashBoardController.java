@@ -15,12 +15,21 @@ public class DashBoardController {
     public AnchorPane mainpane;
     public Button btnuser;
     public AnchorPane subpain;
+    public Button btnsup;
 
 
     public void user_OnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/userForm.fxml"));
         Parent load= fxmlLoader.load();
       UserFormController controller=fxmlLoader.getController();
+        subpain.getChildren().clear();
+        subpain.getChildren().add(load);
+    }
+
+    public void sup_ONAc(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/SupplierForm.fxml"));
+        Parent load= fxmlLoader.load();
+       SupplierFormController controller=fxmlLoader.getController();
         subpain.getChildren().clear();
         subpain.getChildren().add(load);
     }
