@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SupplierModel {
 
@@ -38,6 +39,20 @@ public class SupplierModel {
         while (rst.next()) {
             allSupplierDetails.add(new Supplier(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4)));
         }
-        return allSupplierDetails;    }
+        return allSupplierDetails;
+    }
 
+    public static List<String> loadIds() throws SQLException {
+        Connection con = DBConnection.getInstance().getConnection();
+        ResultSet resultSet = con.createStatement().executeQuery("SELECT supId FROM supplier");
+
+        List<String> data = new ArrayList<>();
+
+        while (resultSet.next()) {
+            data.add(resultSet.getString(1));
+        }
+        return data;
+    }
 }
+
+

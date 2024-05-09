@@ -30,6 +30,7 @@ public class UserFormController {
     public TableColumn tblname;
     public TableColumn tblpassword;
     public TableColumn tblpostion;
+    public AnchorPane subpainuser;
 
 
     public void initialize() {

@@ -16,6 +16,8 @@ public class DashBoardController {
     public Button btnuser;
     public AnchorPane subpain;
     public Button btnsup;
+    public Button btncollector;
+    public Button btnDetails;
 
 
     public void user_OnAction(ActionEvent actionEvent) throws IOException {
@@ -30,6 +32,22 @@ public class DashBoardController {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/SupplierForm.fxml"));
         Parent load= fxmlLoader.load();
        SupplierFormController controller=fxmlLoader.getController();
+        subpain.getChildren().clear();
+        subpain.getChildren().add(load);
+    }
+
+    public void collect_OnAc(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/CollectorForm.fxml"));
+        Parent load= fxmlLoader.load();
+       CollectorFormController controller=fxmlLoader.getController();
+        subpain.getChildren().clear();
+        subpain.getChildren().add(load);
+    }
+
+    public void detailAc(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/TeaCollect_Detail.fxml"));
+        Parent load= fxmlLoader.load();
+        TeaCollectDetailController controller=fxmlLoader.getController();
         subpain.getChildren().clear();
         subpain.getChildren().add(load);
     }

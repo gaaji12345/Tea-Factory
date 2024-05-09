@@ -30,8 +30,7 @@ public class SupplierFormController {
     public TableColumn tblName;
     public TableColumn tblConatct;
     public TableColumn tblAddress;
-
-
+    public AnchorPane subpain;
 
 
     public void initialize() {
@@ -97,11 +96,6 @@ public class SupplierFormController {
             String contact =txtTel.getText();
             String details = txtAddress.getText();
 
-            // Validate fields
-            //validateFields(id, name, contact, details);
-
-            // Validate supplier ID
-            //validateSupplierId(id);
 
             Supplier supplier = new Supplier(id, name, contact, details);
 
@@ -126,11 +120,6 @@ public class SupplierFormController {
             String contact =txtTel.getText();
             String details = txtAddress.getText();
 
-            // Validate fields
-           // validateFields(id, name, contact, details);
-
-            // Validate Supplier ID
-           // validateSupplierId(id);
 
             Supplier supplier = new Supplier(id, name, contact, details);
 
