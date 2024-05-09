@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="758.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeaCollectDetailController">
+   <children>
+      <AnchorPane fx:id="subpain" layoutX="210.0" layoutY="21.0" prefHeight="426.0" prefWidth="512.0" style="-fx-background-color: gray;">
+         <children>
+            <ComboBox fx:id="cmbs_Id" layoutX="109.0" layoutY="59.0" prefHeight="55.0" prefWidth="295.0" promptText="SUPPLIER_ID" />
+            <ComboBox fx:id="cmbC_id" layoutX="109.0" layoutY="135.0" prefHeight="55.0" prefWidth="295.0" promptText="COLLECTOR_ID" />
+            <TextField fx:id="txtamount" layoutX="109.0" layoutY="213.0" prefHeight="55.0" prefWidth="295.0" promptText="TEA-AMOUNT" />
+            <Button fx:id="btnadd" layoutX="109.0" layoutY="283.0" mnemonicParsing="false" onAction="#add_OnAc" prefHeight="41.0" prefWidth="84.0" text="ADD" />
+            <Button fx:id="btnupdate" layoutX="200.0" layoutY="283.0" mnemonicParsing="false" onAction="#up_OnAc" prefHeight="41.0" prefWidth="113.0" text="UPDATE" />
+            <Button fx:id="btndelete" layoutX="320.0" layoutY="283.0" mnemonicParsing="false" onAction="#delete_Onac" prefHeight="41.0" prefWidth="84.0" text="DELETE" />
+            <Button fx:id="btnClear" layoutX="109.0" layoutY="335.0" mnemonicParsing="false" onAction="#clear_onac" prefHeight="55.0" prefWidth="295.0" text="CLEAR" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblmain" layoutX="122.0" layoutY="483.0" prefHeight="248.0" prefWidth="681.0">
+        <columns>
+          <TableColumn fx:id="tbsid" prefWidth="217.0" text="SUPPLIER_ID" />
+          <TableColumn fx:id="tblcid" prefWidth="222.0" text="COLLECTOR_ID" />
+            <TableColumn fx:id="tblamnt" prefWidth="241.0" text="TEA-AMOUNT" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainpain" prefHeight="758.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierFormController">
+<AnchorPane fx:id="mainpain" prefHeight="758.0" prefWidth="943.0" stylesheets="@../Style/supplier.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierFormController">
    <children>
-      <AnchorPane layoutX="225.0" layoutY="24.0" prefHeight="408.0" prefWidth="485.0" style="-fx-background-color: gray;">
+      <AnchorPane fx:id="subpain" layoutX="225.0" layoutY="24.0" prefHeight="408.0" prefWidth="485.0" style="-fx-background-color: gray;">
          <children>
             <TextField fx:id="txtid" layoutX="68.0" layoutY="78.0" onAction="#search_ONAC" prefHeight="36.0" prefWidth="349.0" promptText="ID" />
             <TextField fx:id="txtname" layoutX="68.0" layoutY="125.0" prefHeight="36.0" prefWidth="349.0" promptText="NAME" />
@@ -18,8 +18,8 @@
             <TextField fx:id="txtAddress" layoutX="68.0" layoutY="220.0" prefHeight="36.0" prefWidth="349.0" promptText="ADDRESS" />
             <Button fx:id="btnadd" layoutX="85.0" layoutY="275.0" mnemonicParsing="false" onAction="#add_OnAC" prefHeight="36.0" prefWidth="79.0" text="ADD" />
             <Button fx:id="btnupdate" layoutX="174.0" layoutY="275.0" mnemonicParsing="false" onAction="#update_OnAc" prefHeight="36.0" prefWidth="141.0" text="UPDATE" />
-            <Button fx:id="btndelete" layoutX="325.0" layoutY="275.0" mnemonicParsing="false" onAction="#delete_oNac" prefHeight="36.0" prefWidth="79.0" style="-fx-background-color: RED;" text="DELETE" />
-            <Button fx:id="claearbtn" layoutX="71.0" layoutY="324.0" mnemonicParsing="false" onAction="#clear_Onac" prefHeight="36.0" prefWidth="349.0" text="CLEAR" />
+            <Button fx:id="btndelete" layoutX="325.0" layoutY="275.0" mnemonicParsing="false" onAction="#delete_oNac" prefHeight="36.0" prefWidth="79.0" text="DELETE" />
+            <Button fx:id="claearbtn" layoutX="71.0" layoutY="324.0" mnemonicParsing="false" onAction="#clear_Onac" prefHeight="36.0" prefWidth="349.0" text="CLEAR" textFill="#ebe8e8" />
             <Label layoutX="136.0" layoutY="14.0" prefHeight="51.0" prefWidth="197.0" text="SUPPLIER">
                <font>
                   <Font name="System Bold" size="41.0" />
