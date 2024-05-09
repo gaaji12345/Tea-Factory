@@ -1,0 +1,47 @@
+#cmbs_Id,#cmbC_id,#txtamount{
+    -fx-background-color:transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 2px;
+}
+#subpain{
+    -fx-background-radius: 10px;
+}
+
+
+#btnadd{
+    -fx-background-color: rgb(24, 173, 24);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnupdate{
+    -fx-background-color: rgb(58, 90, 143);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btndelete{
+    -fx-background-color: rgb(192, 63, 63);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnClear{
+    -fx-background-color: rgb(6, 7, 6);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#tblmain{
+    -fx-background-color: #a2adc5;
+}
+#tbsid{
+    -fx-font-family: initial;
+    -fx-background-color: #18ad18;
+}
+#tblcid{
+    -fx-background-color: #18ad18;
+}
+#tblamnt{
+    -fx-background-color: #18ad18;
+}

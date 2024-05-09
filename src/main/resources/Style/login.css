@@ -1,0 +1,27 @@
+
+#btnlog{
+    -fx-background-color: rgb(24, 19, 19);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+
+#txtuser,#txtPassword,#cmbid{
+    -fx-background-color:transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 2px;
+}
+#btnlog:hover{
+    -fx-background-color: #eea3a3;
+}
+
+
+#txtuser:hover{
+    -fx-background-color: #f1e7e7;
+}
+#txtPassword:hover{
+    -fx-background-color: #f1e7e7;
+}
+#cmbid:hover{
+    -fx-background-color: #dac8c8;
+}
