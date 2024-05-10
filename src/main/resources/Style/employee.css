@@ -1,4 +1,4 @@
-#cmbs_Id,#cmbC_id,#txtamount{
+#txteid,#txtname,#txtsalary,#cmbc_id{
     -fx-background-color:transparent;
     -fx-border-color: transparent transparent black transparent;
     -fx-border-width: 2px;
@@ -7,6 +7,9 @@
     -fx-background-radius: 10px;
 }
 
+#subpain{
+    -fx-background-radius: 10px;
+}
 
 #btnadd{
     -fx-background-color: rgb(24, 173, 24);
@@ -26,22 +29,9 @@
     -fx-background-radius: 7px;
     -fx-cursor: hand;
 }
-#btnClear{
+#btnclear{
     -fx-background-color: rgb(6, 7, 6);
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
     -fx-cursor: hand;
 }
-#tblmain{
-    -fx-background-color: #a2adc5;
-}
-/*#tbsid{*/
-/*    -fx-font-family: initial;*/
-/*    -fx-background-color: #18ad18;*/
-/*}*/
-/*#tblcid{*/
-/*    -fx-background-color: #18ad18;*/
-/*}*/
-/*#tblamnt{*/
-/*    -fx-background-color: #18ad18;*/
-/*}*/
