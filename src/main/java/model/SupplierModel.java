@@ -53,6 +53,24 @@ public class SupplierModel {
         }
         return data;
     }
+
+    public static Supplier searchById(String code) throws SQLException {
+        PreparedStatement pstm = DBConnection.getInstance().getConnection()
+                .prepareStatement("SELECT * FROM supplier WHERE supId = ?");
+        pstm.setString(1, code);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if(resultSet.next()) {
+            return new Supplier(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+
+            );
+        }
+        return null;
+    }
 }
 
 

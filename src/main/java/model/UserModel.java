@@ -84,4 +84,16 @@ public class UserModel {
         }
         return data;
     }
+
+    public static List<String> loadIds() throws SQLException {
+        Connection con = DBConnection.getInstance().getConnection();
+        ResultSet resultSet = con.createStatement().executeQuery("SELECT userId FROM user");
+
+        List<String> data = new ArrayList<>();
+
+        while (resultSet.next()) {
+            data.add(resultSet.getString(1));
+        }
+        return data;
+    }
 }

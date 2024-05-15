@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="758.0" prefWidth="943.0" stylesheets="@../Style/employee.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeFormController">
+   <children>
+      <AnchorPane fx:id="subpain" layoutX="175.0" layoutY="28.0" prefHeight="472.0" prefWidth="599.0" style="-fx-background-color: gray;">
+         <children>
+            <TextField fx:id="txteid" layoutX="40.0" layoutY="33.0" onAction="#searchon_AC" prefHeight="39.0" prefWidth="249.0" promptText="EMPLOYEE_ID" />
+            <TextField fx:id="txtname" layoutX="311.0" layoutY="33.0" prefHeight="39.0" prefWidth="249.0" promptText="NAME" />
+            <TextField fx:id="txtsalary" layoutX="40.0" layoutY="84.0" prefHeight="39.0" prefWidth="520.0" promptText="SALARY" />
+            <CheckBox fx:id="chkmale" layoutX="196.0" layoutY="153.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="116.0" text="MALE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="chkfemale" layoutX="371.0" layoutY="150.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="146.0" text="FEMALE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="58.0" layoutY="163.0" prefHeight="44.0" prefWidth="130.0" text="GENDER">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbc_id" layoutX="184.0" layoutY="227.0" opacity="0.96" prefHeight="49.0" prefWidth="214.0" promptText="COLLECTOR-ID" />
+            <Button fx:id="btnadd" layoutX="89.0" layoutY="311.0" mnemonicParsing="false" onAction="#addonac" prefHeight="49.0" prefWidth="114.0" text="ADD" textFill="#ebebeb" />
+            <Button fx:id="btnupdate" layoutX="212.0" layoutY="310.0" mnemonicParsing="false" onAction="#update" prefHeight="49.0" prefWidth="184.0" text="UPDATE" textFill="#f5f4f4" />
+            <Button fx:id="btndelete" layoutX="403.0" layoutY="310.0" mnemonicParsing="false" onAction="#deleteonAc" prefHeight="49.0" prefWidth="114.0" text="DELETE" />
+            <Button fx:id="btnclear" layoutX="89.0" layoutY="371.0" mnemonicParsing="false" onAction="#claeronAc" prefHeight="49.0" prefWidth="428.0" text="CLEAR" textFill="#d7d7d7" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblMain" layoutX="46.0" layoutY="518.0" prefHeight="200.0" prefWidth="861.0">
+        <columns>
+          <TableColumn fx:id="tbleId" prefWidth="141.64385223388672" text="E_ID" />
+          <TableColumn fx:id="tblname" minWidth="7.633110046386719" prefWidth="191.8561553955078" text="NAME" />
+            <TableColumn fx:id="tblsalary" prefWidth="155.53265380859375" text="SALARY" />
+            <TableColumn fx:id="tblgendewr" prefWidth="182.75192260742188" text="GENDER" />
+            <TableColumn fx:id="tblCid" prefWidth="189.8868408203125" text="C_ID" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
