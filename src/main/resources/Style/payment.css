@@ -1,0 +1,35 @@
+
+#subpain{
+    -fx-background-radius: 10px;
+    -fx-background-color: #a2adc5;
+}
+
+
+#btnadd{
+    -fx-background-color: rgb(24, 173, 24);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnupdate{
+    -fx-background-color: rgb(58, 90, 143);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btndelete{
+    -fx-background-color: rgb(192, 63, 63);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnclear{
+    -fx-background-color: rgb(6, 7, 6);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+
+#mainpain{
+    -fx-background-color: #141a36;
+}
