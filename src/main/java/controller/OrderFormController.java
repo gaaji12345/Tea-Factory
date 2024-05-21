@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class OrderFormController {
@@ -100,9 +101,28 @@ public class OrderFormController {
 
 
     private void calculateNetTotal() {
+        double netTotal = 0.0;
+        for (int i = 0; i < tblMain.getItems().size(); i++) {
+            double total = (double) tblTotal.getCellData(i);
+            netTotal += total;
+        }
     }
 
-    private void setRemoveBtnOnAction(Button removeBtn) {
+    private void setRemoveBtnOnAction(Button btn) {
+        btn.setOnAction((e) -> {
+            ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+            ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            Optional<ButtonType> result = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+            if (result.orElse(no) == yes) {
+                int index=tblMain.getItems().size()-1;
+                obList.remove(index);
+
+                tblMain.refresh();
+                calculateNetTotal();
+            }
+        });
     }
 
 }
