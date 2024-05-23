@@ -1,11 +1,12 @@
 package model;
 
 import db.DBConnection;
+import dto.OrderDetails;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PlaceOrderModel {
 
@@ -38,4 +39,43 @@ public class PlaceOrderModel {
         }
         return totalAmount;
     }
+
+    public static boolean save(String oId, LocalDate now, String dId) throws SQLException {
+        Connection con = DBConnection.getInstance().getConnection();
+
+        String sql = "INSERT INTO teaOrders(orderId, date , d_Id ) VALUES(?, ?, ?)";
+
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.setString(1, oId);
+        pstm.setDate(2, Date.valueOf(now));
+        pstm.setString(3, dId);
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static boolean saveOrderDetails(List<OrderDetails> cartDTOList) throws SQLException {
+        for(OrderDetails orderDetails : cartDTOList) {
+            if(!updateQty(orderDetails)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean updateQty(OrderDetails orderDetails) throws SQLException {
+        Connection con = DBConnection.getInstance().getConnection();
+
+        String sql = "INSERT INTO teaOrderDetail(orderId , teaId   , qty   ,amount  ,date ) VALUES(?, ?, ?, ?, ?)";
+
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.setString(1, orderDetails.getOrderID());
+        pstm.setString(2, orderDetails.getTeaID());
+        pstm.setInt(3, orderDetails.getQty());
+        pstm.setDouble(4, orderDetails.getTotal());
+        pstm.setDate(5, Date.valueOf(orderDetails.getDate()));
+
+        return pstm.executeUpdate() > 0;
+    }
+
+
 }
