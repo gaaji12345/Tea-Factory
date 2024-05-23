@@ -21,6 +21,8 @@ public class DashBoardController {
     public Button btnemployee;
     public Button btndeliver;
     public Button btnPayment;
+    public Button btntea;
+    public Button btnOrder;
 
 
     public void user_OnAction(ActionEvent actionEvent) throws IOException {
@@ -75,6 +77,22 @@ public class DashBoardController {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/PayMentForm.fxml"));
         Parent load= fxmlLoader.load();
       PayMentFormController controller=fxmlLoader.getController();
+        subpain.getChildren().clear();
+        subpain.getChildren().add(load);
+    }
+
+    public void tea(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/Tea.fxml"));
+        Parent load= fxmlLoader.load();
+       TeaFormController controller=fxmlLoader.getController();
+        subpain.getChildren().clear();
+        subpain.getChildren().add(load);
+    }
+
+    public void order(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/OrderForm.fxml"));
+        Parent load= fxmlLoader.load();
+        OrderFormController controller=fxmlLoader.getController();
         subpain.getChildren().clear();
         subpain.getChildren().add(load);
     }
