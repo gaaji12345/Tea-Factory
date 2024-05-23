@@ -19,9 +19,9 @@
             <Button fx:id="btnDetails" layoutX="33.0" layoutY="181.0" mnemonicParsing="false" onAction="#detailAc" prefHeight="26.0" prefWidth="141.0" text="Details" />
             <Button fx:id="btnemployee" layoutX="33.0" layoutY="221.0" mnemonicParsing="false" onAction="#employeeOnAC" prefHeight="26.0" prefWidth="141.0" text="Employee" />
             <Button fx:id="btndeliver" layoutX="33.0" layoutY="258.0" mnemonicParsing="false" onAction="#deliverOn" prefHeight="26.0" prefWidth="141.0" text="Devliver" />
-            <Button layoutX="33.0" layoutY="295.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
-            <Button layoutX="33.0" layoutY="332.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
-            <Button layoutX="33.0" layoutY="367.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
+            <Button fx:id="btnPayment" layoutX="33.0" layoutY="295.0" mnemonicParsing="false" onAction="#payOn" prefHeight="26.0" prefWidth="141.0" text="Payment" />
+            <Button fx:id="btntea" layoutX="33.0" layoutY="332.0" mnemonicParsing="false" onAction="#tea" prefHeight="26.0" prefWidth="141.0" text="TEA" />
+            <Button fx:id="btnOrder" layoutX="33.0" layoutY="367.0" mnemonicParsing="false" onAction="#order" prefHeight="26.0" prefWidth="141.0" text="Order" />
             <Button layoutX="33.0" layoutY="402.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Button" />
             <Button fx:id="btnuser" layoutX="33.0" layoutY="441.0" mnemonicParsing="false" onAction="#user_OnAction" prefHeight="26.0" prefWidth="141.0" text="USER" />
          </children>

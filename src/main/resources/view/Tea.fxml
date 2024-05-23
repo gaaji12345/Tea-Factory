@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="758.0" prefWidth="943.0" stylesheets="@../Style/tea.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeaFormController">
+   <children>
+      <AnchorPane fx:id="subPain" layoutX="168.0" layoutY="37.0" prefHeight="449.0" prefWidth="605.0">
+         <children>
+            <TextField fx:id="txtTid" layoutX="51.0" layoutY="28.0" onAction="#searcOn" prefHeight="47.0" prefWidth="491.0" promptText="TEA-ID" />
+            <TextField fx:id="txtType" layoutX="55.0" layoutY="98.0" prefHeight="47.0" prefWidth="491.0" promptText="TYPE" />
+            <TextField fx:id="txtDetaisl" layoutX="56.0" layoutY="162.0" prefHeight="47.0" prefWidth="491.0" promptText="DETAILS" />
+            <TextField fx:id="txtPrice" layoutX="53.0" layoutY="226.0" prefHeight="47.0" prefWidth="491.0" promptText="PRICE" />
+            <Button fx:id="btnadd" layoutX="76.0" layoutY="291.0" mnemonicParsing="false" onAction="#addOn" prefHeight="42.0" prefWidth="123.0" text="ADD" textFill="#fffafa" />
+            <Button fx:id="update" layoutX="213.0" layoutY="292.0" mnemonicParsing="false" onAction="#updateOnAc" prefHeight="42.0" prefWidth="182.0" text="UPDATE" textFill="#fffbfb" />
+            <Button fx:id="btnDelete" layoutX="412.0" layoutY="291.0" mnemonicParsing="false" onAction="#deleteONAc" prefHeight="42.0" prefWidth="123.0" text="DELETE" textFill="#f8f4f4" />
+            <Button fx:id="btnClear" layoutX="77.0" layoutY="343.0" mnemonicParsing="false" onAction="#clearOnAc" prefHeight="42.0" prefWidth="460.0" text="CLEAR" textFill="#ebebeb" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblMaim" layoutX="89.0" layoutY="516.0" prefHeight="200.0" prefWidth="744.0">
+        <columns>
+          <TableColumn fx:id="tblTId" prefWidth="179.91346740722656" text="TEA-ID" />
+          <TableColumn fx:id="tblType" prefWidth="167.15927124023438" text="TYPE" />
+            <TableColumn fx:id="tblDec" prefWidth="210.34075927734375" text="DESC" />
+            <TableColumn fx:id="tblPrice" prefWidth="186.5570068359375" text="PRICE" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

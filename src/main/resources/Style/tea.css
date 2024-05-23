@@ -1,0 +1,35 @@
+#subPain{
+    -fx-background-radius: 10px;
+    -fx-background-color: #3a5a8f;
+}
+
+#txtTid,#txtType,#txtDetaisl,#txtPrice{
+    -fx-background-color:transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 2px;
+}
+
+#btnadd{
+    -fx-background-color: rgb(24, 173, 24);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#update{
+    -fx-background-color: rgb(238, 163, 163);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnDelete{
+    -fx-background-color: rgb(192, 63, 63);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnClear{
+    -fx-background-color: rgb(6, 7, 6);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}

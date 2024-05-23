@@ -8,44 +8,64 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="758.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PayMentFormController">
+<AnchorPane fx:id="mainpain" prefHeight="758.0" prefWidth="943.0" stylesheets="@../Style/payment.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PayMentFormController">
    <children>
-      <AnchorPane fx:id="subpain" layoutX="176.0" layoutY="20.0" prefHeight="453.0" prefWidth="612.0">
+      <AnchorPane fx:id="subpain" layoutX="30.0" layoutY="20.0" prefHeight="453.0" prefWidth="873.0">
          <children>
             <TextField fx:id="txtpId" layoutX="53.0" layoutY="37.0" prefHeight="39.0" prefWidth="234.0" promptText="PAYMENT-ID" />
-            <TextField fx:id="txtSid" layoutX="328.0" layoutY="40.0" prefHeight="39.0" prefWidth="234.0" promptText="SUPPLIER-ID" />
-            <Label layoutX="56.0" layoutY="100.0" prefHeight="32.0" prefWidth="137.0" text="SUPPLIER-NAME">
+            <TextField fx:id="txtDId" layoutX="535.0" layoutY="42.0" onAction="#txtSearchOn" prefHeight="39.0" prefWidth="234.0" promptText="DELIVER-ID" />
+            <Label layoutX="56.0" layoutY="100.0" prefHeight="32.0" prefWidth="86.0" text="USER-ID">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblName" layoutX="203.0" layoutY="95.0" prefHeight="41.0" prefWidth="327.0" text="loading...." />
-            <Label layoutX="73.0" layoutY="176.0" prefHeight="32.0" prefWidth="137.0" text="TOTAL-">
+            <Label fx:id="lblUserId" layoutX="152.0" layoutY="96.0" prefHeight="41.0" prefWidth="219.0" text="loading...." />
+            <Label layoutX="59.0" layoutY="175.0" prefHeight="32.0" prefWidth="96.0" text="U-NAME">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="90.0" layoutY="256.0" prefHeight="32.0" prefWidth="137.0" text="ORDERS-AMNT">
+            <Label layoutX="53.0" layoutY="256.0" prefHeight="32.0" prefWidth="125.0" text="CONF-DATE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblTot" layoutX="199.0" layoutY="170.0" prefHeight="41.0" prefWidth="327.0" text="loadinggg" />
-            <Label fx:id="oAmnt" layoutX="248.0" layoutY="252.0" prefHeight="41.0" prefWidth="281.0" text="loading....." />
-            <Button fx:id="btnadd" layoutX="91.0" layoutY="312.0" mnemonicParsing="false" onAction="#addON" prefHeight="52.0" prefWidth="104.0" text="ADD" />
-            <Button fx:id="btnupdate" layoutX="207.0" layoutY="313.0" mnemonicParsing="false" onAction="#updateON" prefHeight="52.0" prefWidth="255.0" text="UPDATE" />
-            <Button fx:id="btndelete" layoutX="472.0" layoutY="312.0" mnemonicParsing="false" onAction="#deleteOn" prefHeight="52.0" prefWidth="104.0" text="DELETE" />
-            <Button fx:id="btnclear" layoutX="89.0" layoutY="371.0" mnemonicParsing="false" onAction="#clearOn" prefHeight="52.0" prefWidth="485.0" text="CLEAR" />
+            <Label fx:id="lbluserName" layoutX="162.0" layoutY="172.0" prefHeight="41.0" prefWidth="200.0" text="loadinggg" />
+            <Label fx:id="lblConfDate" layoutX="177.0" layoutY="250.0" prefHeight="41.0" prefWidth="186.0" text="loading....." />
+            <Button fx:id="btnadd" layoutX="410.0" layoutY="264.0" mnemonicParsing="false" onAction="#addON" prefHeight="50.0" prefWidth="104.0" text="ADD" textFill="#fff7f7" />
+            <Button fx:id="btnupdate" layoutX="532.0" layoutY="264.0" mnemonicParsing="false" onAction="#updateON" prefHeight="53.0" prefWidth="174.0" text="UPDATE" textFill="#fffbfb" />
+            <Button fx:id="btndelete" layoutX="720.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteOn" prefHeight="55.0" prefWidth="104.0" text="DELETE" textFill="#fffdfd" />
+            <Button fx:id="btnclear" layoutX="410.0" layoutY="338.0" mnemonicParsing="false" onAction="#clearOn" prefHeight="52.0" prefWidth="416.0" text="CLEAR" textFill="#fffafa" />
+            <Label layoutX="59.0" layoutY="332.0" prefHeight="32.0" prefWidth="113.0" text="DELIVER-DATE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDeliverDate" layoutX="200.0" layoutY="328.0" prefHeight="41.0" prefWidth="186.0" text="loading....." />
+            <Label layoutX="413.0" layoutY="117.0" prefHeight="32.0" prefWidth="86.0" text="SUP-ID">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSupId" layoutX="549.0" layoutY="113.0" prefHeight="41.0" prefWidth="219.0" text="loading...." />
+            <Label layoutX="59.0" layoutY="382.0" prefHeight="32.0" prefWidth="113.0" text="AMOUNT">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAmnt" layoutX="194.0" layoutY="378.0" prefHeight="41.0" prefWidth="186.0" text="loading....." />
          </children>
       </AnchorPane>
-      <TableView fx:id="tblMAin" layoutX="40.0" layoutY="513.0" prefHeight="200.0" prefWidth="854.0">
+      <TableView fx:id="tblMAin" layoutX="11.0" layoutY="513.0" prefHeight="200.0" prefWidth="920.0">
         <columns>
-          <TableColumn fx:id="tblpId" prefWidth="154.42920684814453" text="P-ID" />
-          <TableColumn fx:id="tblSi" prefWidth="147.07083129882812" text="S-ID" />
-            <TableColumn fx:id="tblname" prefWidth="142.96347045898438" text="S-NAME" />
-            <TableColumn fx:id="tbltot" prefWidth="200.07766723632812" text="TOTAL" />
-            <TableColumn fx:id="tblamnt" prefWidth="209.1119384765625" text="O-AMNT" />
+          <TableColumn fx:id="tblpId" prefWidth="87.45706462860107" text="P-ID" />
+          <TableColumn fx:id="tblUID" prefWidth="96.29317474365234" text="U-ID" />
+            <TableColumn fx:id="tblname" prefWidth="103.12931823730469" text="NAME" />
+            <TableColumn fx:id="tblDid" prefWidth="90.36587524414062" text="D-ID" />
+            <TableColumn fx:id="tblSid" prefWidth="95.20660400390625" text="S-ID" />
+            <TableColumn fx:id="tblCdate" prefWidth="146.29339599609375" text="C-DATE" />
+            <TableColumn fx:id="tblDdate" prefWidth="180.48004150390625" text="D-DATE" />
+            <TableColumn fx:id="tblamnt" prefWidth="120.51995849609375" text="AMNT" />
         </columns>
       </TableView>
    </children>

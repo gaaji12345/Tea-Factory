@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="758.0" prefWidth="943.0" stylesheets="@../Style/order.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFormController">
+   <children>
+      <AnchorPane fx:id="subPian" layoutX="12.0" layoutY="20.0" prefHeight="475.0" prefWidth="923.0">
+         <children>
+            <TextField fx:id="txtoId" layoutX="25.0" layoutY="37.0" prefHeight="38.0" prefWidth="276.0" promptText="ORDER-ID" />
+            <ComboBox fx:id="cmbDID" layoutX="327.0" layoutY="36.0" onAction="#deliveryOnAc" prefHeight="41.0" prefWidth="257.0" promptText="DELIVER-ID" />
+            <ComboBox fx:id="cmbTd" layoutX="622.0" layoutY="37.0" onAction="#teaOnAc" prefHeight="41.0" prefWidth="257.0" promptText="TEA-ID" />
+            <Label layoutX="29.0" layoutY="87.0" prefHeight="32.0" prefWidth="84.0" text="USER-ID">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="142.0" prefHeight="32.0" prefWidth="84.0" text="U-NAME">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbluserId" layoutX="119.0" layoutY="82.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUserName" layoutX="118.0" layoutY="139.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="216.0" prefHeight="32.0" prefWidth="84.0" text="SUP-ID">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSupId" layoutX="118.0" layoutY="198.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="406.0" layoutY="105.0" prefHeight="32.0" prefWidth="113.0" text="ORDER-DATE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="417.0" layoutY="168.0" prefHeight="32.0" prefWidth="84.0" text="PRICE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOdate" layoutX="544.0" layoutY="99.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPrice" layoutX="528.0" layoutY="161.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtQty" layoutX="208.0" layoutY="268.0" prefHeight="38.0" prefWidth="389.0" promptText="QTY" />
+            <Button fx:id="btnaddToCart" layoutX="164.0" layoutY="331.0" mnemonicParsing="false" onAction="#cartOnAc" prefHeight="47.0" prefWidth="581.0" text="ADD -TO-CART" textFill="#fffbfb" />
+            <Button fx:id="btnPlaceOrder" layoutX="161.0" layoutY="400.0" mnemonicParsing="false" onAction="#placeOrderOnAc" prefHeight="47.0" prefWidth="578.0" text="PLACE-ORDER" textFill="#fffbfb" />
+            <Label layoutX="421.0" layoutY="215.0" prefHeight="32.0" prefWidth="84.0" text="T-TYPE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTtype" layoutX="512.0" layoutY="206.0" prefHeight="45.0" prefWidth="200.0" text="..............">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblMain" layoutX="3.0" layoutY="513.0" prefHeight="217.0" prefWidth="937.0">
+        <columns>
+          <TableColumn fx:id="tblOId" prefWidth="75.0" text="O-ID" />
+          <TableColumn fx:id="tblDId" prefWidth="86.54298400878906" text="D-ID" />
+            <TableColumn fx:id="tblUID" prefWidth="86.95701599121094" text="U-ID" />
+            <TableColumn fx:id="tblUserName" prefWidth="73.91389465332031" text="U-NAME" />
+            <TableColumn fx:id="tblDate" prefWidth="106.19656372070312" text="O-DATE" />
+            <TableColumn fx:id="tblTiD" prefWidth="79.41400146484375" text="T-ID" />
+            <TableColumn fx:id="tblType" prefWidth="101.2615966796875" text="T-TYPE" />
+            <TableColumn fx:id="tblQty" prefWidth="61.5662841796875" text="QTY" />
+            <TableColumn fx:id="tblPrice" prefWidth="86.044189453125" text="PRICE" />
+            <TableColumn fx:id="tblTotal" prefWidth="77.10931396484375" text="TOTAL" />
+            <TableColumn fx:id="tblAction" prefWidth="103.65234375" text="ACTION" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+#subPian{
+    -fx-border-radius: 10px;
+    -fx-background-color: #3a5a8f;
+}
+
+#txtoId,#cmbTd,#cmbDID,#txtQty{
+    -fx-background-color:transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 2px;
+}
+
+
+#btnaddToCart{
+    -fx-background-color: rgb(24, 173, 24);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+#btnPlaceOrder{
+    -fx-background-color: rgb(58, 90, 143);
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
