@@ -1,14 +1,27 @@
 package controller;
 
+import dto.Devliverydto;
+import dto.OrderDetails;
+import dto.Tea;
+import dto.Userdto;
 import dto.tm.OrderTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import model.DeliverModel;
+import model.OrderModel;
+import model.TeaModel;
+import model.UserModel;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -41,6 +54,17 @@ public class OrderFormController {
     public TableColumn tblAction;
 
     public void initialize() {
+        tblOId.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        tblDId.setCellValueFactory(new PropertyValueFactory<>("deliverID"));
+        tblUID.setCellValueFactory(new PropertyValueFactory<>("userID"));
+        tblUserName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+        tblDate.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
+        tblTiD.setCellValueFactory(new PropertyValueFactory<>("teaID"));
+        tblType.setCellValueFactory(new PropertyValueFactory<>("TeaType"));
+        tblPrice.setCellValueFactory(new PropertyValueFactory<>("TeaPrice"));
+        tblQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        tblTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        tblAction.setCellValueFactory(new PropertyValueFactory<>("removeBtn"));
         loadDeliveryingIds();
         loadTeaIds();
         setOrderDate();
@@ -48,13 +72,38 @@ public class OrderFormController {
     }
 
     private void setOrderDate() {
+        lblOdate.setText(String.valueOf(LocalDate.now()));
     }
 
     private void loadTeaIds() {
+        try {
+            ObservableList<String> obList = FXCollections.observableArrayList();
+            List<String> ids = TeaModel.loadIds();
+
+            for (String id : ids) {
+                obList.add(id);
+            }
+            cmbTd.setItems(obList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "SQL Error!").show();
+        }
 
     }
 
     private void loadDeliveryingIds() {
+        try {
+            ObservableList<String> obList = FXCollections.observableArrayList();
+            List<String> ids = DeliverModel.loadIds();
+
+            for (String id : ids) {
+                obList.add(id);
+            }
+            cmbDID.setItems(obList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "SQL Error!").show();
+        }
 
     }
 
@@ -97,6 +146,37 @@ public class OrderFormController {
 
 
     public void placeOrderOnAc(ActionEvent actionEvent) {
+        String oId = txtoId.getText();
+        String tId = cmbTd.getValue();
+
+        List<OrderDetails> cartDTOList = new ArrayList<>();
+
+        for (int i = 0; i < tblMain.getItems().size(); i++) {
+            OrderTm orderTM = obList.get(i);
+
+            OrderDetails dto = new OrderDetails(
+                    orderTM.getOrderID(),
+                    orderTM.getTeaID(),
+                    orderTM.getQty(),
+                    orderTM.getTotal(),
+                    orderTM.getOrderDate()
+            );
+            cartDTOList.add(dto);
+        }
+        String date = lblOdate.getText();
+        boolean isPlaced = false;
+        try {
+            isPlaced = OrderModel.placeOrder(cartDTOList,oId,tId);
+            if(isPlaced) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Order Placed").show();
+                obList.clear();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Order Not Placed").show();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "SQL Error").show();
+        }
     }
 
 
@@ -125,4 +205,45 @@ public class OrderFormController {
         });
     }
 
+    public void deliveryOnAc(ActionEvent actionEvent) {
+        String code = cmbDID.getValue();
+        try {
+            Devliverydto res = DeliverModel.searchById(code);
+            String cod = res.getUserId();
+            Userdto ges = UserModel.search(cod);
+            String gesCode = ges.getName();
+            fillBookFields(res,gesCode);
+
+            txtQty.requestFocus();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "SQL Error!").show();
+        }
+    }
+
+    private void fillBookFields(Devliverydto res, String gesCode) {
+        lbluserId.setText(res.getUserId());
+        lblSupId.setText(res.getSupId());
+        lblUserName.setText(gesCode);
+    }
+
+
+    public void teaOnAc(ActionEvent actionEvent) {
+        String code = cmbTd.getValue();
+        try {
+            Tea tea = TeaModel.searchById(code);
+            filltaeFields(tea);
+
+            txtQty.requestFocus();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "SQL Error!").show();
+        }
+    }
+
+    private void filltaeFields(Tea tea) {
+
+        lblTtype.setText(tea.getName());
+        lblPrice.setText(String.valueOf(tea.getPrice()));
+    }
 }
